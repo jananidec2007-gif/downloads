@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+    body { background-image: url("back.jpg"); background-size: cover; height: 100vh; margin: 0; display: flex; justify-content: center; align-items: center; }
+
+    /* Main container holds both the card and the box, stacking them vertically */
+    .gift-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Space between card and box */
+    }
+
+    /* 1. Glass Card - Appears above the box */
+    .glass-card {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(15px);
+        padding: 30px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        text-align: center;
+        color: white;
+    }
+
+    /* 2. Gift Box Structure */
+    .gift-container { position: relative; cursor: pointer; }
+    .box { width: 150px; height: 150px; background: #ff4d4d; border-radius: 5px; }
+    
+    /* Lid is now perfectly aligned to the top of the box */
+    .lid {
+        width: 170px; height: 30px; background: #cc0000;
+        position: absolute; top: 0; left: -10px;
+        transition: transform 0.6s ease;
+    }
+
+    /* Trigger: Open box, reveal card */
+    .gift-container:hover .lid { transform: translateY(-50px) rotate(-10deg);  top: -250%; }
+    .gift-wrapper:hover .glass-card { opacity: 1; }
+
+    .next-btn {
+        margin-top: 15px; padding: 10px 25px;
+        background: rgba(255, 255, 255, 0.3); border: 1px solid white;
+        color: white; border-radius: 50px; cursor: pointer;
+    }
+     .surprise { 
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-size: 20px; font-weight: bold; color: white; text-align: center; width: 100%;
+  }
+</style>
+</head>
+<body>
+   
+
+<div class="gift-wrapper">
+    <div class="glass-card">
+        <h2>Cheers to Another Year!</h2>
+        <p>HAPPY BIRTHDAY </p>
+        <a href="https://jananidec2007-gif.github.io/document/"><button class="next-btn">click here for surprise ></button></a>
+    </div>
+
+    <div class="gift-container">
+        
+        <div class="lid"></div>
+        <div class="box"><div class="surprise">THIS IS YOUR GIFT</div></div>
+    </div>
+</div>
+</body>
+</html>
